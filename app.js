@@ -1,6 +1,6 @@
 var express = require('express'),  
     app = express(),
-    path = require('path');,
+    path = require('path'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
