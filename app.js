@@ -1,14 +1,22 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express = require('express'),  
+    app = express(),
+    path = require('path');,
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    server = require('http').createServer(app),
+    io = require('socket.io').listen(server);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
+
+app.use('/client', express.static(__dirname + '/client'));
+app.use('/common', express.static(__dirname + '/common'));
+app.get('/', function (req, res) {
+    res.sendfile(__dirname + '/client/index.html');
+}); 
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -54,3 +62,9 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+// Start the server.
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080  
+, ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+
+server.listen(port, ip);
