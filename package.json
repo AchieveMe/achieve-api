@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Achieve API",
   "scripts": {
-    "test": "exit 1",
     "start": "node app.js"
   },
   "private": "true",
