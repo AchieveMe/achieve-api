@@ -15,7 +15,7 @@
     "url": "https://github.com/AchieveMe/achieve-api/issues"
   },
   "homepage": "https://github.com/AchieveMe/achieve-api",
-  "dependencies": {\
+  "dependencies": {
     "extend": "~1.2.1",
     "memoizejs": "~0.1.0",
     "mongoose": "~3.8.8",
