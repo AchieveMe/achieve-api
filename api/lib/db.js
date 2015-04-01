@@ -1,7 +1,7 @@
 "use strict";
 
 var mongoose = require('mongoose');
-var config = require('../config.json');
+var config = require('../../config.json');
 
 exports.isValidationError = function(err) {
   return ((err.name === 'ValidationError')
