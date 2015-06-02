@@ -18,7 +18,8 @@ fs.readdirSync(controllers_path).forEach(function (file) {
 
 server
 .use(restify.fullResponse())
-.use(restify.bodyParser());
+.use(restify.bodyParser())
+.use(restify.CORS());
 
 
 server.listen(port, function (err) {

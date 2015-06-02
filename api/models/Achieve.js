@@ -21,28 +21,4 @@ var AchieveSchema = new Schema({
 	}
 });
 
-// Achieve.statics.getWith = function(opts, callback) {
-// 	if (typeof opts === 'function') {
-// 		callback = opts;
-// 		opts = {};
-// 	}
-
-// 	opts.limit = opts.limt || 20;
-
-// 	var query = this.find();
-
-// 	if(opts.older) {
-// 		query = query.where('createdAt').lte(opts.older);
-// 	} else if (opts.newer) {
-// 		query = query.where('createdAt').gte(opts.newer);
-// 	}
-
-// 	query.limit(opts.limit).populate({
-// 		path: 'author',
-// 		select: 'username email'
-// 	})
-// 	.sort('-createdAt')
-// 	.exec(callback);
-// };
-
 module.exports = mongoose.model('Achieve', AchieveSchema);
