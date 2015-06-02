@@ -16,13 +16,13 @@
   },
   "homepage": "https://github.com/AchieveMe/achieve-api",
   "dependencies": {
-    "extend": "~1.2.1",
+    "extend": "^2.0.1",
     "memoizejs": "~0.1.0",
-    "mongoose": "~3.8.8",
-    "restify": "^2.8.5",
-    "stormpath-restify": "0.0.4",
+    "mongoose": "^4.0.4",
+    "restify": "^3.0.3",
+    "stormpath-restify": "0.0.6",
     "underscore": "^1.8.2",
     "uuid": "^2.0.1",
-    "validator": "~3.5.1"
+    "validator": "^3.40.0"
   }
 }
