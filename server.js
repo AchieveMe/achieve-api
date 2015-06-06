@@ -1,4 +1,5 @@
 var restify  = require('restify');
+var Q        = require('q');
 var settings = require('settings');
 var modules  = require('api/modules');
 
@@ -22,7 +23,7 @@ module.exports = {
 };
 
 function init() {
-  return new Promise(initHandler);
+  return Q.Promise(initHandler);
 }
 
 function initHandler(resolve, reject) {

@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Q        = require('q');
 var settings = require('settings');
 
 module.exports = {
@@ -6,10 +7,10 @@ module.exports = {
 };
 
 function init() {
-  return new Promise(dbInitPromise);
+  return Q.Promise(initHandler);
 }
 
-function dbInitPromise(resolve, reject) {
+function initHandler(resolve, reject) {
   mongoose.connect(settings.db.url, function mongooseConnect(err) {
     if (err) {
       reject(err);
