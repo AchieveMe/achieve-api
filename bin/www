@@ -47,4 +47,3 @@ function dbInitError(dbError) {
 function dbInitSuccess() {
   console.log('Mongoose connected');
 }
-

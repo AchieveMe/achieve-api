@@ -1,5 +1,6 @@
 var restify  = require('restify');
 var settings = require('settings');
+var modules  = require('api/modules');
 
 var server;
 
@@ -13,15 +14,17 @@ server
 .use(restify.fullResponse())
 .use(restify.gzipResponse());
 
+modules.foo.setRoutes(server);
+
 module.exports = {
   init: init
 };
 
 function init() {
-  return new Promise(serverInitPromise);
+  return new Promise(initHandler);
 }
 
-function serverInitPromise(resolve, reject) {
+function initHandler(resolve, reject) {
   server.listen(settings.server.port, function serverInitSuccess() {
     resolve(server);
   })
