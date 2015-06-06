@@ -17,7 +17,8 @@ server
 modules.foo.setRoutes(server);
 
 module.exports = {
-  init: init
+  init: init,
+  close: close
 };
 
 function init() {
@@ -31,4 +32,8 @@ function initHandler(resolve, reject) {
   .on('error', function serverInitError(err) {
     reject(err);
   });
+}
+
+function close() {
+  server.close();
 }
