@@ -2,8 +2,12 @@
   "name": "achieve-api",
   "version": "1.0.0",
   "description": "Achieve API",
+  "engine": "node 0.12",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "start:dev": "node-dev ./bin/www",
+    "test": "mocha",
+    "test:dev": "mocha --watch"
   },
   "private": "true",
   "repository": {
@@ -16,13 +20,21 @@
   },
   "homepage": "https://github.com/AchieveMe/achieve-api",
   "dependencies": {
-    "extend": "~1.2.1",
-    "memoizejs": "~0.1.0",
-    "mongoose": "~3.8.8",
-    "restify": "^2.8.5",
-    "stormpath-restify": "0.0.4",
-    "underscore": "^1.8.2",
-    "uuid": "^2.0.1",
-    "validator": "~3.5.1"
+    "app-module-path": "1.0.2",
+    "extend": "2.0.1",
+    "memoizejs": "0.1.0",
+    "mongoose": "4.0.4",
+    "q": "1.4.1",
+    "request": "2.57.0",
+    "restify": "3.0.3",
+    "stormpath-restify": "0.0.6",
+    "underscore": "1.8.2",
+    "uuid": "2.0.1",
+    "validator": "3.40.0"
+  },
+  "devDependencies": {
+    "chai": "3.0.0",
+    "mocha": "2.2.5",
+    "node-dev": "2.6.2"
   }
 }
