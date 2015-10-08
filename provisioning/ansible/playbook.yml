@@ -1,0 +1,13 @@
+---
+- name: Achievements provisioning system
+  hosts: all
+  remote_user: vagrant
+  sudo: true
+  roles: 
+    - bootstrap
+    - git
+    - mongodb
+    - nodejs
+  vars:
+    git_username: guiandmag
+    git_usermail: guiandmag@gmail.com
