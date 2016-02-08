@@ -28,3 +28,5 @@ node_modules
 .lock-wscript
 .stormpath
 .DS_Store
+
+.vagrant

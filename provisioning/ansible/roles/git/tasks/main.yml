@@ -1,0 +1,23 @@
+---
+# File: setup.yml
+# Part: Git
+#
+# Description: Install and configure Git
+#
+# Parameters:
+#
+# Dependencies ([part:]type:filename):
+# - vars:main.yml (not necessary if you don't override defaults)
+#
+# OS familly: Ubuntu >= 12.04
+
+- name: Git | Install git base packages
+  apt: pkg={{item}} state=installed
+  with_items:
+    - git-core
+
+# Install the default templates
+- name: Git | Push global config file
+  template:
+    src=gitconfig.j2
+    dest=/etc/gitconfig
